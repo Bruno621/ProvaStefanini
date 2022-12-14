@@ -1,7 +1,0 @@
-node {
-        stage('Build') {git 'https://github.com/Bruno621/Projetos.git'}
-        
-        stage('Testes Automatizados') {sh "chmod +x -R ${env.WORKSPACE}"}
-        
-        stage('Reports Testes Automatizados'){cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1}
-}
